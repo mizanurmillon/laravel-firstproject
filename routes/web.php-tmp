@@ -1,0 +1,18 @@
+
+Deprecated: The each() function is deprecated. This message will be suppressed on further calls in C:\Users\Md Mizanur Rahman\AppData\Roaming\Sublime Text\Packages\PHPTools\php.tools\codeFormatter.php on line 54
+<?php
+
+use App\Http\Controllers\AboutController;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/',
+function () {
+		return view('welcome');
+	});
+Route::get('/all.contacts', [AboutController::class , 'Contact'])->name('all.contacts');
+Route::get('/insert', [AboutController::class , 'Insert']);
+Route::post('/data', [AboutController::class , 'DataAdded']);
+Route::get('/delete-contact/{id}', [AboutController::class , 'Delete']);
+Route::get('/edit-contact/{id}', [AboutController::class , 'Edit']);
+Route::post('/update/{id}', [AboutController::class , 'Update']);
+Route::get('/view-contact/{id}', [AboutController::class , 'View']);
